@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('enroll_detail', function (Blueprint $table) {
-            $table->id('enroll_detail_id');
-            $table->string('course_content_id')->nullable();
+        Schema::create('certificate_student', function (Blueprint $table) {
+            $table->id('certificate_student_id');
+            $table->string('certificate_no')->nullable();
             $table->string('student_id')->nullable();
-            $table->text('status')->nullable();
+            $table->string('course_id')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('cert_theme')->nullable();
+            $table->timestamps('date_finish')->nullable();
             $table->timestamps('archived')->nullable();
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('enroll_detail');
+        Schema::dropIfExists('certificate_student');
     }
 };

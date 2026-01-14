@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('enroll_detail', function (Blueprint $table) {
-            $table->id('enroll_detail_id');
-            $table->string('course_content_id')->nullable();
-            $table->string('student_id')->nullable();
-            $table->text('status')->nullable();
+        Schema::create('category_content', function (Blueprint $table) {
+            $table->id('category_content_id');
+            $table->string('category_content_name')->nullable();
+            $table->integer('course_id')->nullable();
+            $table->string('duration')->nullable();
             $table->timestamps('archived')->nullable();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('enroll_detail');
+        Schema::dropIfExists('category_content');
     }
 };

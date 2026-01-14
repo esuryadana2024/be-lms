@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('CourseContent', function (Blueprint $table) {
-            $table->id('course_content_id');
-            $table->string('course_content_name');
-            $table->string('url')->nullable();
-            $table->integer('duration')->nullable();
+        Schema::create('to_quest', function (Blueprint $table) {
+            $table->id('to_quest_id');
+            $table->integer('try_out_id')->nullable();
             $table->string('type')->nullable();
-            $table->integer('course_category_id')->nullable();
-            $table->integer('instructor_id')->nullable();
+            $table->text('question')->nullable();
+            $table->string('answer')->nullable();
+            $table->string('correct_answer')->nullable();
             $table->integer('course_id')->nullable();
-            $table->json('contain')->nullable();
             $table->timestamps('archived')->nullable();
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('CourseContent');
+        Schema::dropIfExists('to_quest');
     }
 };
