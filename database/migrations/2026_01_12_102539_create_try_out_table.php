@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('course_id')->nullable();
             $table->string('course_name')->nullable();
             $table->string('img')->nullable();
-            $table->timestamps('price')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->string('price')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->json('contain')->nullable();
             $table->string('slug')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('instructor_id')->nullable();
             $table->integer('course_id')->nullable();
             $table->json('contain')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('course_detail_id');
             $table->string('course_detail_name')->nullable();
             $table->integer('duration')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('answer')->nullable();
             $table->string('correct_answer')->nullable();
             $table->integer('course_id')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

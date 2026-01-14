@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('course_id')->nullable();
             $table->string('slug')->nullable();
             $table->string('cert_theme')->nullable();
-            $table->timestamps('date_finish')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->date('date_finish')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

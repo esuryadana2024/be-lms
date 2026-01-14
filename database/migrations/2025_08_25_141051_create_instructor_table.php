@@ -21,7 +21,7 @@ return new class extends Migration
             $table->json('expertise')->nullable();
             $table->json('other')->nullable();
             $table->string('slug')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

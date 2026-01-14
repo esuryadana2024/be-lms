@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('course_category_name');
             $table->string('img')->nullable();
             $table->string('desc')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

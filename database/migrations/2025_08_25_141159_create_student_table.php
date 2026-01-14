@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('overview')->nullable();
             $table->string('slug')->nullable();
             $table->string('photo')->nullable();
-            $table->timestamps('archived')->nullable();
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }
