@@ -16,6 +16,13 @@ class CourseContent extends Model
     protected $table = 'course_content';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'course_content_id';
+
+    /**
      * Kolom yang bisa diisi massal (mass assignable)
      */
     protected $fillable = [
@@ -38,4 +45,36 @@ class CourseContent extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    /**
+     * Scope for active contents
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('archived', false);
+    }
+
+    /**
+     * Relationship with course
+     */
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'course_id', 'course_id');
+    }
+
+    /**
+     * Relationship with instructor
+     */
+    public function instructor()
+    {
+        return $this->belongsTo(Instructor::class, 'instructor_id', 'instructor_id');
+    }
+
+    /**
+     * Relationship with category
+     */
+    public function category()
+    {
+        return $this->belongsTo(CourseCategory::class, 'course_category_id', 'course_category_id');
+    }
 }

@@ -33,4 +33,9 @@ class CourseCategory extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class, 'course_category_id', 'course_category_id');
+    }
 }

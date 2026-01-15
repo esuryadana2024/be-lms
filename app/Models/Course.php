@@ -16,6 +16,13 @@ class Course extends Model
     protected $table = 'course';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'course_id';
+
+    /**
      * Kolom yang bisa diisi massal (mass assignable)
      */
     protected $fillable = [
@@ -40,4 +47,33 @@ class Course extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'date' => 'datetime',
+        'contain' => 'array',
+        'archived' => 'boolean',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    /**
+     * Relationship with category
+     */
+    public function category()
+    {
+        return $this->belongsTo(CourseCategory::class, 'course_category_id', 'course_category_id');
+    }
+
+    /**
+     * Relationship with instructor
+     */
+    public function instructor()
+    {
+        return $this->belongsTo(User::class, 'instructor_id', 'id');
+    }
 }
