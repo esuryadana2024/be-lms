@@ -6,22 +6,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CourseCategory extends Model
+class TOADetail extends Model
 {
     use HasFactory, SoftDeletes;
 
     /**
      * Nama tabel lowercase singular
      */
-    protected $table = 'course_category';
+    protected $table = 'toa_detail';
 
     /**
      * Kolom yang bisa diisi massal (mass assignable)
      */
     protected $fillable = [
-        'course_category_name',
-        'img',
-        'desc',
+        'date',
+        'to_assesment_id',
+        'to_quest_id',
+        'answer',
+        'correct_answer',
+        'student_id',
+        'score',
+        'course_id',
         'archived'
     ];
 

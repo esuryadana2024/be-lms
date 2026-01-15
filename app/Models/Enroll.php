@@ -6,22 +6,28 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CourseCategory extends Model
+class Enroll extends Model
 {
     use HasFactory, SoftDeletes;
 
     /**
      * Nama tabel lowercase singular
      */
-    protected $table = 'course_category';
+    protected $table = 'enroll';
 
     /**
      * Kolom yang bisa diisi massal (mass assignable)
      */
     protected $fillable = [
-        'course_category_name',
-        'img',
-        'desc',
+        'date_start',
+        'date_end',
+        'status',
+        'student_id',
+        'student_name',
+        'course_id',
+        'course_name',
+        'slug',
+        'thumbnail',
         'archived'
     ];
 
